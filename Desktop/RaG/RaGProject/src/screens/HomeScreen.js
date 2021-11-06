@@ -11,6 +11,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import homeScreenImage from "../../assets/homeScreen.jpeg";
 
 
+
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>

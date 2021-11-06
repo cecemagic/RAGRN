@@ -14,6 +14,8 @@ import AnimatableTest from './src/screens/AnimatableTest'
 import RentAGuyScreen from './src/screens/RentAGuyScreen'
 import BeADateScreen from './src/screens/BeADateScreen'
 import HomeScreen from './src/screens/HomeScreen'
+import InfoCard from './src/screens/InfoCard'
+// import LogInScreen from './src/screens/LogInScreen'
 
 
 const HomeStack = createStackNavigator()
@@ -25,10 +27,11 @@ function HomeScreenStack({ navigation }) {
         headerShown: false,
       }}
     >
+      <HomeStack.Screen name="InfoCard" component={InfoCard}/>
      <HomeStack.Screen name="HomeScreen" component={HomeScreen}/>
       <HomeStack.Screen name="RentAGuyScreen" component={RentAGuyScreen} />
       <HomeStack.Screen name="BeADateScreen" component={BeADateScreen} />
-
+      {/* <HomeStack.Screen name="LogInScreen" component={LogInScreen}/> */}
     </HomeStack.Navigator>
   );
 }
