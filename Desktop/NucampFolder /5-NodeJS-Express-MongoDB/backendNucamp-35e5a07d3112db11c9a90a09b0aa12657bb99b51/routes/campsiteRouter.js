@@ -168,9 +168,9 @@ campsiteRouter.route('/:campsiteId/comments/:commentId')
     })
     .put(authenticate.verifyUser, (req, res, next) => {
         Campsite.findById(req.params.campsiteId)
-            .populate('comments.author')
+            // .populate('comments.author')
             .then(campsite => {
-                if (campsite) {
+                if (campsite && campsite.comments.id(req.params.commentId)) {
                     if (campsite.comments.id(req.params.commentId).author._id.equals(req.user._id)) {
                         if (req.body.rating) {
                             campsite.comments.id(req.params.commentId).rating = req.body.rating;
@@ -186,7 +186,7 @@ campsiteRouter.route('/:campsiteId/comments/:commentId')
                             })
                             .catch(err => next(err));
                     } else {
-                        err = new Error(`Can't change this!`);
+                        err = new Error(`You are not authorized to update this comment`);
                         err.status = 403;
                         return next(err);
                     }
