@@ -16,6 +16,8 @@ const commentSchema = new Schema({
         required: true
     },
     author: {
+        //mongoose populate, using relational data from logged in user to continue to be the author.
+        //machine reads it as an unique ID. but display easy to read username and password.
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }

@@ -18,5 +18,5 @@ const userSchema = new Schema({
 });
 
 userSchema.plugin(passportLocalMongoose);
-
+//user is called here from models/campsite.js
 module.exports = mongoose.model('User', userSchema);
