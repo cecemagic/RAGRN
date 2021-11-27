@@ -3,6 +3,7 @@
         "firstname",
         "lastname",
         "nucampsite",
+        "originalname",
         "resave"
     ]
 }
