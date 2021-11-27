@@ -4,6 +4,7 @@
         "lastname",
         "nucampsite",
         "originalname",
-        "resave"
+        "resave",
+        "xfbml"
     ]
 }
