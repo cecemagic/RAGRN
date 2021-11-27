@@ -12,8 +12,9 @@ const storage = multer.diskStorage({
         cb(null, file.originalname)
     }
 });
-//check file extension is correct format
+//check file extension is correct format. 
 const imageFileFilter  = (req, file, cb) => {
+    //this is regex(regular expression)
     if(!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
         return cb (new Error('You can upload only image file!'), false);
     }
@@ -30,14 +31,14 @@ uploadRouter.route('/')
     res.statusCode = 403;
     res.end('GET operation not supported on /imageUpload');
 })
-.post(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res) => {
-    res.statusCode = 403;
-    res.end('GET operation not supported on /imageUpload');
-})
-.put(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, upload.single('imageFile'), (req, res) => {
+.post(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, upload.single('imageFile'), (req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     res.end(req.file);
+})
+.put(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res) => {
+    res.statusCode = 403;
+    res.end('PUT operation not supported on /imageUpload');
 })
 .delete(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res) => {
     res.statusCode = 403;
