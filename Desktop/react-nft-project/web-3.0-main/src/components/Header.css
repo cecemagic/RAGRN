@@ -1,0 +1,77 @@
+.header {
+  color: white;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header > div {
+  margin: 10px;
+}
+
+.logo {
+  width: 180px;
+}
+
+.searchBar {
+  background-color: #1c1c1e;
+  height: 50px;
+  flex: 1;
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+}
+
+.searchIconContainer {
+  margin: 10px;
+}
+
+.searchInput {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  outline: none;
+  color: #eee;
+  font-size: 16px;
+}
+
+.headerItems {
+  display: flex;
+  color: #a1a5b0;
+}
+
+.headerItems > p {
+  margin: 10px;
+}
+
+.themeSwichContainer {
+  display: flex;
+  background-color: #1c1c1e;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  padding: 15px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+}
+
+.headerActions > div {
+  margin: 10px;
+}
+
+.themeSwichContainer > img {
+  height: 25px;
+}
+
+.loginButton {
+  background-color: #1c1c1e;
+  padding: 15px 40px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+}
